@@ -1,4 +1,4 @@
-# legal_ease
+# legalease
 
 A new Flutter project.
 
