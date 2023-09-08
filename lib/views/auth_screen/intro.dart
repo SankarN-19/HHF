@@ -60,9 +60,9 @@ class introduction extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
-              constraints: BoxConstraints(
-                maxWidth: 319.0,
+              margin: const EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
+              constraints: const BoxConstraints(
+                maxWidth: 300.0,
               ),
               child: const Text(
                 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu \n\nQuis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu',
@@ -75,37 +75,39 @@ class introduction extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(102.0, 31.0, 103.0, 57.0),
+              padding: const EdgeInsets.fromLTRB(102.0, 31.0, 103.0, 37.0),
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 32.0),
+                    margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                     width: 49.0,
-                    height: 8.0,
+                    height: 5.0,
                   ),
-                  Container(
-                    width: double.infinity,
-                    height: 45.0,
-                    decoration: BoxDecoration(
-                      color: buttonPurple,
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                    child: Center(
-                      child: const Text(
-                        'Get Started',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w500,
-                          height: 1.5,
-                          color: Color(0xfffefefe),
+                  ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(buttonPurple),
+                      ),
+                      child: Container(
+                        width: double.infinity,
+                        height: 50.0,
+                        child: const Center(
+                          child: Text(
+                            'GET STARTED',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w500,
+                              height: 1.5,
+                              color: Color(0xfffefefe),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ).onTap(() {
-                    Get.to(() => const Introduction2());
-                  })
+                      onPressed: () {
+                        Get.to(() => const Introduction2());
+                      }),
                 ],
               ),
             )
