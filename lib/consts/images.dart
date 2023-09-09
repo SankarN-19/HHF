@@ -10,3 +10,4 @@ const icperson1 = 'assets/images/lawyer1.png';
 const icperson2 = 'assets/images/lawyer2.png';
 const icperson3 = 'assets/images/lawyer3.png';
 const icapplogo = 'assets/images/applogo.png';
+const profdat = 'assets/images/lawyerprofile.png';
