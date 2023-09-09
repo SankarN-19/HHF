@@ -1,4 +1,7 @@
 import 'package:legalease/consts/consts.dart';
+import 'package:legalease/views/app_screens/lawyerinfo.dart';
+import 'package:legalease/views/widgets_common/profiletile.dart';
+import 'dart:ui';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,6 +12,22 @@ class HomeScreen extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      appBar: AppBar(
+        title: "Welcome".text.fontFamily(bold).size(30.0).white.make(),
+        backgroundColor: buttonPurple,
+      ),
+      drawer: const Drawer(
+        child: Column(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text('Drawer Header'),
+            ),
+          ],
+        ),
+      ),
       body: Container(
           width: screenWidth,
           height: screenHeight,
@@ -19,18 +38,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 35.heightBox,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.menu),
-                    ),
-                    5.widthBox,
-                    "Welcome".text.fontFamily(bold).size(30.0).black.make(),
-                  ],
-                ),
-                10.heightBox,
+
                 Container(
                   width: double.infinity,
                   height: 36.0,
@@ -202,6 +210,34 @@ class HomeScreen extends StatelessWidget {
                 //     )
                 //   ],
                 // )
+
+                profileTile(
+                  img: icperson1,
+                  title: "Dr. Bibhuti Bhusan",
+                  detail: "phd. from xyz, jhds kdhslk kjhg ...",
+                  num: 50,
+                  star: 4.6,
+                ).onTap(() {
+                  Get.to(() => const LawyerProfile());
+                }),
+                profileTile(
+                  img: icperson2,
+                  title: "Dr. Bibhuti Bhusan",
+                  detail: "phd. from xyz, jhds kdhslk kjhg ...",
+                  num: 50,
+                  star: 4.6,
+                ).onTap(() {
+                  Get.to(() => const LawyerProfile());
+                }),
+                profileTile(
+                  img: icperson3,
+                  title: "Dr. Bibhuti Bhusan",
+                  detail: "phd. from xyz, jhds kdhslk kjhg ...",
+                  num: 50,
+                  star: 4.6,
+                ).onTap(() {
+                  Get.to(() => const LawyerProfile());
+                }),
               ],
             ),
           )),
