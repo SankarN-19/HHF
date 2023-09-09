@@ -21,9 +21,13 @@ class HomeScreen extends StatelessWidget {
           children: [
             DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: buttonPurple,
               ),
-              child: Text('Drawer Header'),
+              child: Text(
+                "LegalEase",
+                style: TextStyle(
+                    fontFamily: bold, color: Colors.white, fontSize: 30),
+              ),
             ),
           ],
         ),
