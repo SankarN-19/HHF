@@ -100,7 +100,7 @@ class Introduction2 extends StatelessWidget {
                       ),
                     )),
                   ).onTap(() {
-                    Get.to(() => const LoginScreen());
+                    Get.to(() => LoginScreen());
                   })
                 ],
               ),

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:legalease/consts/consts.dart';
 import 'package:legalease/views/app_screens/home_screen.dart';
@@ -19,21 +21,32 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              margin: const EdgeInsets.fromLTRB(302.0, 10.0, 0.0, 20.0),
-              child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
+              margin: const EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  TextButton(
+                    onPressed: () => Get.back(),
+                    child: Icon(Icons.arrow_back),
                   ),
-                  child: const Text(
-                    'Skip',
-                    style: TextStyle(
-                      fontSize: 15.0,
-                      fontFamily: regular,
-                      height: 1.5,
-                      color: Color(0xff787878),
+                  190.widthBox,
+                  TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
                     ),
-                  )),
+                    child: const Text(
+                      'Skip',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        fontFamily: regular,
+                        height: 1.5,
+                        color: Color(0xff787878),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Container(
               margin: const EdgeInsets.fromLTRB(43.0, 0.0, 43.0, 30.0),
@@ -110,37 +123,39 @@ class LoginScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 13.0),
-                      width: 150.0,
-                      height: 41.0,
-                      decoration: BoxDecoration(
-                        color: buttonPurple,
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Center(
-                        child: "Login"
-                            .text
-                            .fontFamily(bold)
-                            .size(20.0)
-                            .white
-                            .make(),
-                      ),
-                    ).onInkTap(() {
-                      Get.to(() => const HomeScreen());
-                    }),
-                    5.heightBox,
-                    "Forgot Password?"
-                        .text
-                        .fontFamily(semibold)
-                        .size(17.0)
-                        .black
-                        .make(),
-                    30.heightBox,
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 13.0),
+                        width: 150.0,
+                        height: 41.0,
+                        decoration: BoxDecoration(
+                          color: buttonPurple,
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        child: Center(
+                          child: "Login"
+                              .text
+                              .fontFamily(bold)
+                              .size(20.0)
+                              .white
+                              .make(),
+                        ),
+                      ).onTap(() {
+                        Get.to(() => HomeScreen());
+                      }),
+                      5.heightBox,
+                      "Forgot Password?"
+                          .text
+                          .fontFamily(semibold)
+                          .size(17.0)
+                          .black
+                          .make(),
+                      30.heightBox,
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -171,7 +186,7 @@ class LoginScreen extends StatelessWidget {
                           .make(),
                     ),
                   ).onTap(() {
-                    Get.to(() => const Registration());
+                    Get.to(() => Registration());
                   }),
                   5.heightBox,
                 ],

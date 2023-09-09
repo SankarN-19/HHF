@@ -46,7 +46,7 @@ class Registration extends StatelessWidget {
                       .make(),
                 ),
               ).onInkTap(() {
-                Get.to(() => const HomeScreen());
+                Get.to(() => HomeScreen());
               }))
             ],
           ),
