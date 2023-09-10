@@ -1,5 +1,7 @@
 import 'package:legalease/consts/consts.dart';
+import 'package:legalease/views/app_screens/about.dart';
 import 'package:legalease/views/app_screens/lawyerinfo.dart';
+import 'package:legalease/views/app_screens/lawyerlist.dart';
 import 'package:legalease/views/widgets_common/profiletile.dart';
 import 'dart:ui';
 
@@ -18,6 +20,100 @@ class HomeScreen extends StatelessWidget {
         title: "Welcome".text.fontFamily(bold).size(30.0).white.make(),
         backgroundColor: buttonPurple,
       ),
+      drawer: Drawer(
+          child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: SizedBox(
+                  height: context.screenHeight * 0.35,
+                  child: DrawerHeader(
+                    decoration: const BoxDecoration(
+                      color: buttonPurple,
+                      image: DecorationImage(
+                        image: AssetImage(
+                          icperson1,
+                        ),
+                      ),
+                    ),
+                    child:
+                        "LegalEase".text.fontFamily(bold).size(30).white.make(),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.home,
+            ),
+            title: const Text('Home'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          // ListTile(
+          //   leading: const Icon(
+          //     Icons.settings,
+          //   ),
+          //   title: const Text('Settings'),
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //   },
+          // ),
+          ListTile(
+            leading: const Icon(
+              Icons.people,
+            ),
+            title: const Text('Lawyer'),
+            onTap: () {
+              Get.to(() => const lawyerData());
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.my_library_books_rounded,
+            ),
+            title: const Text('Resources'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.feedback,
+            ),
+            title: const Text('FeedBack'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.info_outline,
+            ),
+            title: const Text('About Us'),
+            onTap: () {
+              Get.to(() => const aboutUs());
+            },
+          ),
+          (context.screenHeight * 0.1).heightBox,
+          ListTile(
+            leading: const Icon(
+              Icons.logout_outlined,
+            ),
+            title: const Text('Log Out'),
+            onTap: () {},
+          ),
+        ],
+      )
+          // child: Column(
+          //  crossAxisAlignment: CrossAxisAlignment.start,
+          // children: [
+          //     Container(
+          //       width: double.infinity,
+          //       height: 30,
+          //     )
+          //   ],
+          // ),
+          ),
       body: Container(
         width: context.screenWidth,
         height: context.screenHeight,
@@ -255,18 +351,6 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-      drawer: const Drawer(
-        child: SingleChildScrollView(),
-        // child: Column(
-        //  crossAxisAlignment: CrossAxisAlignment.start,
-        // children: [
-        //     Container(
-        //       width: double.infinity,
-        //       height: 30,
-        //     )
-        //   ],
-        // ),
       ),
     );
   }

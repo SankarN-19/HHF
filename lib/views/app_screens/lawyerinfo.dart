@@ -19,14 +19,14 @@ class LawyerProfile extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              (context.screenHeight * 0.05).heightBox,
-              searchBar(hint: "search for a lawyer"),
+              // (context.screenHeight * 0.05).heightBox,
+              // searchBar(hint: "search for a lawyer"),
               // Container(
               //   width: double.infinity,
               //   height: 40,
               //   color: Colors.amberAccent,
               // ),
-              (context.screenHeight * 0.02).heightBox,
+              (context.screenHeight * 0.04).heightBox,
               Image.asset(profdat),
               5.heightBox,
               Container(
@@ -195,7 +195,7 @@ class LawyerProfile extends StatelessWidget {
                               borderSide: BorderSide(
                                 color: boxcolor,
                               ),
-                              borderRadius: BorderRadius.circular(16.0),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
                         ),

@@ -1,6 +1,6 @@
 // icons
 const icFirstpage = 'assets/images/page1pic.png';
-const icProfile = 'assets/images/profiephoto.png';
+const icProfile = 'assets/images/profphot.png';
 const icMail = 'assets/images/Gmail.png';
 const icfacebook = 'assets/images/Facebook.png';
 const icComplain = 'assets/images/complaint.png';
