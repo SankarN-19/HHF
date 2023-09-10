@@ -3,7 +3,8 @@ import 'package:legalease/consts/colors.dart';
 
 import 'package:legalease/consts/consts.dart';
 import 'package:legalease/views/auth_screen/intro.dart';
-import 'package:legalease/views/auth_screen/login.dart';
+
+import '../../firebase_services/splash_services.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,17 +14,12 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  changeScreen() {
-    Future.delayed(Duration(seconds: 3), () {
-      Get.to(() => const introduction());
-    });
-  }
-
+  SplashServices splashscreen = SplashServices();
   @override
   void initState() {
-    changeScreen();
     // TODO: implement initState
     super.initState();
+    splashscreen.isLogin(context);
   }
 
   @override

@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:legalease/consts/consts.dart';
 import 'package:legalease/views/app_screens/about.dart';
 import 'package:legalease/views/app_screens/lawyerinfo.dart';
@@ -7,8 +9,25 @@ import 'dart:ui';
 
 import 'package:legalease/views/widgets_common/search.dart';
 
-class HomeScreen extends StatelessWidget {
+import '../../utils/utils.dart';
+import '../auth_screen/login.dart';
+
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final auth = FirebaseAuth.instance;
+  final ref = FirebaseDatabase.instance.ref('Post');
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +119,9 @@ class HomeScreen extends StatelessWidget {
               Icons.logout_outlined,
             ),
             title: const Text('Log Out'),
-            onTap: () {},
+            onTap: () {
+              Get.to(() => const LoginScreen());
+            },
           ),
         ],
       )

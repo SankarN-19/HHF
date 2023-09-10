@@ -1,9 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:legalease/consts/styles.dart';
 import 'package:legalease/views/splashScreen/splash_Screen.dart';
 import 'package:legalease/consts/consts.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -17,8 +21,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'LegalEase',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.transparent,
-        appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(backgroundColor:buttonPurple),
         fontFamily: regular,
       ),
       home: const SplashScreen(),

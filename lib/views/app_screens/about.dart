@@ -19,7 +19,7 @@ class aboutUs extends StatelessWidget {
               (context.screenHeight * 0.04).heightBox,
               detail1.text.fontFamily(regular).size(20).color(textGrey).make(),
               (context.screenHeight * 0.01).heightBox,
-              detail1.text.fontFamily(regular).size(20).color(textGrey).make(),
+              detail2.text.fontFamily(regular).size(20).color(textGrey).make(),
             ],
           ),
         ),
