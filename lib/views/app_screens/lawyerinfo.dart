@@ -1,4 +1,5 @@
 import 'package:legalease/consts/consts.dart';
+import 'package:legalease/views/widgets_common/search.dart';
 
 class LawyerProfile extends StatelessWidget {
   const LawyerProfile({super.key});
@@ -9,6 +10,7 @@ class LawyerProfile extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
+        padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
         width: double.infinity,
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -18,12 +20,13 @@ class LawyerProfile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               (context.screenHeight * 0.05).heightBox,
-              Container(
-                width: double.infinity,
-                height: 40,
-                color: Colors.amberAccent,
-              ),
-              (context.screenHeight * 0.04).heightBox,
+              searchBar(hint: "search for a lawyer"),
+              // Container(
+              //   width: double.infinity,
+              //   height: 40,
+              //   color: Colors.amberAccent,
+              // ),
+              (context.screenHeight * 0.02).heightBox,
               Image.asset(profdat),
               5.heightBox,
               Container(
@@ -41,7 +44,7 @@ class LawyerProfile extends StatelessWidget {
                             .size(20)
                             .black
                             .make(),
-                        (context.screenWidth * 0.3).widthBox,
+                        (context.screenWidth * 0.27).widthBox,
                         "4.6".text.fontFamily(bold).size(20).black.make(),
                         const Icon(
                           Icons.star,
@@ -169,6 +172,33 @@ class LawyerProfile extends StatelessWidget {
                             .size(15)
                             .color(textGrey)
                             .make(),
+                      ],
+                    ),
+                    (context.screenHeight * 0.03).heightBox,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        "Reviews".text.fontFamily(bold).size(20).black.make(),
+                        (context.screenHeight * 0.01).heightBox,
+                        TextFormField(
+                          decoration: InputDecoration(
+                            hintStyle: TextStyle(
+                              fontFamily: regular,
+                              color: textGrey,
+                            ),
+                            hintText: "Add a Comment",
+                            isDense: true,
+                            fillColor: boxcolor,
+                            filled: true,
+                            border: InputBorder.none,
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: boxcolor,
+                              ),
+                              borderRadius: BorderRadius.circular(16.0),
+                            ),
+                          ),
+                        ),
                       ],
                     )
                   ],
